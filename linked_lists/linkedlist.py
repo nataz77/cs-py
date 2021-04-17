@@ -52,7 +52,7 @@ class LinkedList:
     def insert_front(self, value):
         new_node = LinkedListNode(value)
         new_node.next = self.head
-        return new_node
+        self.head = new_node
     
     def remove_item(self, value):
         node = self.head
