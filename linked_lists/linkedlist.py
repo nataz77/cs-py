@@ -25,10 +25,10 @@ class LinkedList:
 
     def __iter__(self):        
         n = []
-        printval = self.head
-        while printval is not None:
-            n.append(printval)
-            printval = printval.next
+        current = self.head
+        while current is not None:
+            n.append(current)
+            current = current.next
         return iter(n)
     
     def get_item(self, index):
@@ -36,12 +36,12 @@ class LinkedList:
             raise ValueError("The index must be a number")
         i = 0
         node = self.head
-        while i <= index:
+        while node is not None:
             if i = index:
                 return node.data
-            else:
-                node = node.next
-                i += 1
+            node = node.next
+            i += 1
+        raise ValueError("The specified index does not exist")
     
     def search_item(self, value):
         node = self.head
