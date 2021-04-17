@@ -1,8 +1,9 @@
 from node import GraphNode
 import queue
 
-# driver program
+
 def main():
+    """Driver program"""
     graph = sample_graph()
     bfs(graph)
 
@@ -10,7 +11,8 @@ def main():
     dfs(dfsgraph[0])
     input()
 
-def bfs(graph):    
+def bfs(graph):
+    """Executes a breadth-first search on a graph"""
     q = queue.Queue()
     q.put(graph[0])
     graph[0].mark_discovered()
@@ -24,6 +26,7 @@ def bfs(graph):
     return
 
 def dfs(node):
+    """Executes a depth-first search on a graph"""
     node.mark_discovered()
     for n in node.neightbours:
         if not n.data.Discovered:
@@ -33,6 +36,7 @@ def dfs(node):
             continue
 
 def sample_graph():
+    """Generates a sample graph"""
     graph = []
     for i in range(8):
         graph.append(GraphNode(i))

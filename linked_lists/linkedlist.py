@@ -5,6 +5,7 @@ class LinkedList:
         self.head = None
     
     def __repr__(self):
+        """Prints out a basic node -> node -> etc representation of the list"""
         node = self.head
         nodes = []
         while node is not None:
@@ -14,6 +15,7 @@ class LinkedList:
         return " -> ".join(nodes)
     
     def add_last(self, val):
+        """Adds an item at the back of the linked list"""
         NewNode = LinkedListNode(val)
         if self.head is None:
             self.head = NewNode
@@ -32,6 +34,7 @@ class LinkedList:
         return iter(n)
     
     def get_item(self, index):
+        """Gets the item in a linked list via its index"""
         if ! isinstance(index, int):
             raise ValueError("The index must be a number")
         i = 0
@@ -43,18 +46,24 @@ class LinkedList:
             i += 1
         raise ValueError("The specified index does not exist")
     
+    
     def search_item(self, value):
+        """Searches the linked list to see if the specified item is present"""
         node = self.head
-        while node.data != value and node is not None:
+        while node is not None:
+            if node.data == value:
+                    return True
             node = node.next
-        return node.value
+        return False
 
     def insert_front(self, value):
+        """Inserts a new node at the front of the linked list"""
         new_node = LinkedListNode(value)
         new_node.next = self.head
         self.head = new_node
     
     def remove_item(self, value):
+        """Removes the item at the specified index"""
         node = self.head
         previous = None
         while node.data != value and node is not None:
