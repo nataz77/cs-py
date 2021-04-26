@@ -1,4 +1,4 @@
-class bs:
+class BinarySearch:
     def __init__(self):
         """Binary search on an ordered array"""
         pass
@@ -17,7 +17,7 @@ class bs:
                 return mid
             elif arr[mid] < x:
                 l = mid + 1
-            else arr[mid] > x:
+            elif arr[mid] > x:
                 r = mid - 1
         return -1
 
