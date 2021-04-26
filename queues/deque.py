@@ -1,9 +1,11 @@
 from linkedlistnode import LinkedListNode
 
+
 class Deque:
     """Implementation of a double ended queue using a doubly linked list
        TODO: this is yet to be tested.
     """
+
     def __init__(self):
         self.front = None
         self.back = None
@@ -15,18 +17,18 @@ class Deque:
         NewNode.previous = None
         self.front.previous = NewNode
         self.front = NewNode
-        self.len += 1   
+        self.len += 1
 
     def enqueue_back(self, value):
-        NewNode = LinkedListNode(value)   
+        NewNode = LinkedListNode(value)
         if self.front is None:
-                
+
         if self.back is None:
             NewNode.previous = None
-            self.back = NewNode            
+            self.back = NewNode
         else:
             NewNode.previous = self.back
-            self.back.next = NewNode             
+            self.back.next = NewNode
         self.back = NewNode
         self.len += 1
 

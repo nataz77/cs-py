@@ -21,9 +21,8 @@ def quick_sort_range(arr, first, last):
     # right side
     quick_sort_range(arr, i + 1, last)
 
+
 # wrapper function
-
-
 def quick_sort(arr):
     """Performs a quick sort"""
     if len(arr) == 1:

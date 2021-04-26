@@ -1,13 +1,14 @@
 from ll import LinkedList, LinkedListNode
 
+
 class GraphNode:
     """Represents a graph node"""
+
     def __init__(self, id):
         self.ID = id
         self.Discovered = False
         self.neightbours = LinkedList()
-        
-    
+
     def mark_discovered(self):
         """Marks the node as discovered"""
         self.Discovered = True

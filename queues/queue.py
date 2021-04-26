@@ -1,5 +1,6 @@
 from linkedlistnode import LinkedListNode
 
+
 class Queue:
     def __init__(self):
         self.front = None
@@ -9,12 +10,12 @@ class Queue:
     def peek(self):
         if self.is_empty():
             raise Exception("The queue is empty")
-        else: 
+        else:
             return self.front.data
 
     def is_empty(self):
-        return self.front is None 
-    
+        return self.front is None
+
     def enqueue(self, value):
         NewNode = LinkedListNode(value)
         if self.front is None and self.back is None:

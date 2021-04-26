@@ -11,6 +11,7 @@ def main():
     dfs(dfsgraph[0])
     input()
 
+
 def bfs(graph):
     """Executes a breadth-first search on a graph"""
     q = queue.Queue()
@@ -25,6 +26,7 @@ def bfs(graph):
                 q.put(n.data)
     return
 
+
 def dfs(node):
     """Executes a depth-first search on a graph"""
     node.mark_discovered()
@@ -34,6 +36,7 @@ def dfs(node):
             dfs(n.data)
         else:
             continue
+
 
 def sample_graph():
     """Generates a sample graph"""
@@ -45,7 +48,7 @@ def sample_graph():
         graph[1],
         graph[6],
         graph[7]
-    ])    
+    ])
 
     graph[1].add_neighbour([
         graph[2],
@@ -83,6 +86,7 @@ def sample_graph():
     ])
 
     return graph
+
 
 if __name__ == "__main__":
     main()
