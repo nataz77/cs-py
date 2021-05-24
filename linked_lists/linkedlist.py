@@ -36,12 +36,12 @@ class LinkedList:
 
     def get_item(self, index):
         """Gets the item in a linked list via its index"""
-        if ! isinstance(index, int):
+        if not isinstance(index, int):
             raise ValueError("The index must be a number")
         i = 0
         node = self.head
         while node is not None:
-            if i = index:
+            if i == index:
                 return node.data
             node = node.next
             i += 1

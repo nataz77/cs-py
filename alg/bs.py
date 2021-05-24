@@ -3,7 +3,7 @@ class BinarySearch:
         """Binary search on an ordered array"""
         pass
 
-    def bs(arr, l, r, x):
+    def bs(self, arr, l, r, x):
         """Binary search on an ordered array"""
         if not type(l, int):
             raise ValueError("The left index must be an integer")
