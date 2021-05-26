@@ -1,4 +1,4 @@
-from helpers import *
+from .helpers import Helpers
 
 
 class MaxHeap:
@@ -9,10 +9,10 @@ class MaxHeap:
     def insert(self, x):
         self.n += 1
         self.arr[self.n - 1] = x
-        fix_up(self.arr, self.n - 1)
+        Helpers.fix_up(self.arr, self.n - 1)
 
-    def delete(self):
-        swap(self.arr[0], self.arr[self.n - 1])
+    def delete(self) -> list:
+        self.arr[0], self.arr[self.n - 1] = self.arr[self.n - 1], self.arr[0]
         self.n -= 1
-        fix_down(self.arr, self.n, 0)
+        Helpers.fix_down(self.arr, self.n, 0)
         return self.arr[self.n]

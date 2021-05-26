@@ -1,4 +1,4 @@
-def selection_sort(arr, arr_len):
+def selection_sort(arr) -> list:
     """
     Perform a selection sort on an array.
     Runs in O(n^2) so it's not so good
@@ -14,4 +14,4 @@ def selection_sort(arr, arr_len):
 
 
 a = [9, 12, 5, 7, 11]
-print(selection_sort(a, len(a)))
+print(selection_sort(a))

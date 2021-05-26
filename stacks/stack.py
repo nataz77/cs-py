@@ -1,4 +1,5 @@
-from linkedlistnode import LinkedListNode
+from typing import Any
+from .linkedlistnode import LinkedListNode
 
 
 class Stack:
@@ -8,15 +9,15 @@ class Stack:
         self.head = None
         self.count = 0
 
-    def peek(self):
+    def peek(self) -> Any:
         if self.is_empty():
             raise Exception("Unable to peek value: the stack is empty")
         return self.head.data
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self.count == 0
 
-    def push(self, value):
+    def push(self, value) -> None:
         node = LinkedListNode(value)
         if self.is_empty():
             self.head = node
@@ -27,7 +28,7 @@ class Stack:
         self.head = node
         self.count += 1
 
-    def pop(self):
+    def pop(self) -> Any:
         if self.is_empty():
             raise Exception("There are no values in the stack")
         val = self.head.data

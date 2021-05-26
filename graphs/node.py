@@ -1,4 +1,4 @@
-from ll import LinkedList
+from .ll import LinkedList
 
 
 class GraphNode:
@@ -9,11 +9,11 @@ class GraphNode:
         self.Discovered = False
         self.neightbours = LinkedList()
 
-    def mark_discovered(self):
+    def mark_discovered(self) -> None:
         """Marks the node as discovered"""
         self.Discovered = True
 
-    def add_neighbour(self, n):
+    def add_neighbour(self, n) -> None:
         """Adds a neightbour to the current node"""
         # I could pass in a list or a single element
         if isinstance(n, list):

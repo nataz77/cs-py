@@ -7,5 +7,5 @@ class LinkedListNode:
         self.previous = None
 
     @property
-    def HasNext(self):
-        return self.next != None
+    def HasNext(self) -> bool:
+        return self.next is not None

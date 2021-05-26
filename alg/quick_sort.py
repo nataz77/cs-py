@@ -1,4 +1,4 @@
-def quick_sort_range(arr, first, last):
+def quick_sort_range(arr, first, last) -> None:
     """
     Quick sort implementation
     Runs in O(n log n) and uses constant space but it' not stable
@@ -23,7 +23,7 @@ def quick_sort_range(arr, first, last):
 
 
 # wrapper function
-def quick_sort(arr):
+def quick_sort(arr) -> None:
     """Performs a quick sort"""
     if len(arr) == 1:
         return arr

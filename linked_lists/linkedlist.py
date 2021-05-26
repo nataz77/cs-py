@@ -1,11 +1,12 @@
-from linkedlistnode import LinkedListNode
+from typing import Any, Iterable
+from .linkedlistnode import LinkedListNode
 
 
 class LinkedList:
     def __init__(self):
         self.head = None
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Prints out a basic node -> node -> etc representation of the list"""
         node = self.head
         nodes = []
@@ -15,7 +16,7 @@ class LinkedList:
         nodes.append("None")
         return " -> ".join(nodes)
 
-    def add_last(self, val):
+    def add_last(self, val) -> None:
         """Adds an item at the back of the linked list"""
         NewNode = LinkedListNode(val)
         if self.head is None:
@@ -26,7 +27,7 @@ class LinkedList:
             last = last.next
         last.next = NewNode
 
-    def __iter__(self):
+    def __iter__(self) -> Iterable:
         n = []
         current = self.head
         while current is not None:
@@ -34,7 +35,7 @@ class LinkedList:
             current = current.next
         return iter(n)
 
-    def get_item(self, index):
+    def get_item(self, index) -> Any:
         """Gets the item in a linked list via its index"""
         if not isinstance(index, int):
             raise ValueError("The index must be a number")
@@ -47,7 +48,7 @@ class LinkedList:
             i += 1
         raise ValueError("The specified index does not exist")
 
-    def search_item(self, value):
+    def search_item(self, value) -> bool:
         """Searches the linked list to see if the specified item is present"""
         node = self.head
         while node is not None:
@@ -56,13 +57,13 @@ class LinkedList:
             node = node.next
         return False
 
-    def insert_front(self, value):
+    def insert_front(self, value) -> None:
         """Inserts a new node at the front of the linked list"""
         new_node = LinkedListNode(value)
         new_node.next = self.head
         self.head = new_node
 
-    def remove_item(self, value):
+    def remove_item(self, value) -> None:
         """Removes the item at the specified index"""
         node = self.head
         previous = None

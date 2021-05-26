@@ -1,17 +1,17 @@
-from node import TreeNode
+from .node import TreeNode
 
 
 class BST:
     def __init__(self):
         self.root = None
 
-    def create_bst(self):
+    def create_bst(self) -> TreeNode:
         return self.root
 
-    def bst_insert(self, val, t):
-        self.root = insert_node(t.root, val)
+    def bst_insert(self, val, t) -> None:
+        self.root = self.insert_node(t.root, val)
 
-    def insert_node(self, node, new_node_value):
+    def insert_node(self, node, new_node_value) -> TreeNode:
         if node is None:
             node = TreeNode(new_node_value)
         elif new_node_value < node.value:

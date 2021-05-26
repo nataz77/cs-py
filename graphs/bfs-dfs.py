@@ -1,4 +1,4 @@
-from node import GraphNode
+from .node import GraphNode
 import queue
 
 

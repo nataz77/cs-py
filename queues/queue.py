@@ -1,4 +1,5 @@
-from linkedlistnode import LinkedListNode
+from typing import Any
+from .linkedlistnode import LinkedListNode
 
 
 class Queue:
@@ -7,16 +8,16 @@ class Queue:
         self.back = None
         self.len = 0
 
-    def peek(self):
+    def peek(self) -> Any:
         if self.is_empty():
             raise Exception("The queue is empty")
         else:
             return self.front.data
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self.front is None
 
-    def enqueue(self, value):
+    def enqueue(self, value) -> None:
         NewNode = LinkedListNode(value)
         if self.front is None and self.back is None:
             self.head = NewNode
@@ -25,7 +26,7 @@ class Queue:
         self.back = NewNode
         self.len += 1
 
-    def dequeue(self):
+    def dequeue(self) -> Any:
         if self.is_empty():
             raise Exception("The queue is empty")
         val = self.front.data
