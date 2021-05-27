@@ -46,7 +46,7 @@ class Deque:
     def deque_back(self):
         if self.is_empty():
             raise IndexError("The queue is empty")
-        pass
+        
 
     def peek_front(self) -> None:
         if self.front is None:

@@ -1,10 +1,10 @@
 
 
 class Helpers:
-    def l_child(i) -> int:
+    def l_child(self, i) -> int:
         return 2 * i + 1
 
-    def r_child(i) -> int:
+    def r_child(self, i) -> int:
         return 2 * i + 2
 
     def parent(self, i) -> int:
